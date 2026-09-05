@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,12 +11,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: 'Lexend_Deca'
+    return ScreenUtilInit(
+      designSize: Size(375, 812),
+      builder: (_ , child) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          fontFamily: 'Lexend_Deca'
+        ),
+        home: HomeScreen()
       ),
-      home: HomeScreen()
     );
   }
 }
@@ -25,25 +30,17 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Icon(Icons.arrow_back, color: Colors.green),
-        title: Text("Home Screen", style: TextStyle(fontSize: 25)),
-        centerTitle: true,
-        actions: [Text('Hi'), SizedBox(width: 20), Icon(Icons.check_circle)],
-      ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Hello World',
-            style: TextStyle(
-              fontWeight: FontWeight.w300,
-              fontSize: 25,
-            ),
+
+          Image.asset("assets/images/flag.png",
+            width: double.infinity,
+            height: 0.36 * MediaQuery.of(context).size.height,
+            fit: BoxFit.cover,
           ),
-          SizedBox(height: 20,),
-          Image.asset("assets/images/flag.png")
+
         ],
       ),
     );
