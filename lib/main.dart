@@ -9,7 +9,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: HomeScreen());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: 'Lexend_Deca'
+      ),
+      home: HomeScreen()
+    );
   }
 }
 
@@ -32,11 +38,12 @@ class HomeScreen extends StatelessWidget {
           Text(
             'Hello World',
             style: TextStyle(
-              fontFamily: 'Lexend_Deca',
-              fontWeight: FontWeight.w100,
-              fontSize: 50,
+              fontWeight: FontWeight.w300,
+              fontSize: 25,
             ),
           ),
+          SizedBox(height: 20,),
+          Image.asset("assets/images/flag.png")
         ],
       ),
     );
