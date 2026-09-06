@@ -68,7 +68,12 @@ class HomeScreen extends StatelessWidget {
                   disabledBorder: UnderlineInputBorder(),
                   // errorBorder: ,
                   // focusedErrorBorder: ,
-                  prefixIcon: Icon(Icons.title),
+                  // prefixIcon: Icon(Icons.title),
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: SvgPicture.asset(AppSvgs.profile,),
+                  ),
+                  // contentPadding: EdgeInsets.all(30),
                   suffixIcon: Icon(Icons.local_airport)
                 ),
                 onChanged: (String value){
