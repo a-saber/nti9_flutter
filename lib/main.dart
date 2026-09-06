@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nti9_flutter/core/utils/app_assets.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,11 +36,50 @@ class HomeScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
 
-          Image.asset("assets/images/flag.png",
+          Image.asset(AppImages.flag,
             width: double.infinity,
-            height: 0.36 * MediaQuery.of(context).size.height,
+            height: 298.h,
             fit: BoxFit.cover,
           ),
+          SizedBox(height: 30,),
+
+          
+          Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: TextFormField(
+                // enabled: false,
+                readOnly: true,
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.grey,
+                  hintText: 'Enter Your Name',
+                  labelText: 'Name',
+                  enabledBorder: OutlineInputBorder(),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(
+                      color: Colors.blue,
+                      width: 2
+                    )
+
+                  ),
+                  disabledBorder: UnderlineInputBorder(),
+                  // errorBorder: ,
+                  // focusedErrorBorder: ,
+                  prefixIcon: Icon(Icons.title),
+                  suffixIcon: Icon(Icons.local_airport)
+                ),
+                onChanged: (String value){
+                  print(value);
+                },
+                onTap: (){
+                  showTimePicker(context: context, initialTime: TimeOfDay.now());
+                },
+                obscureText: true,
+                obscuringCharacter: '*',
+
+              ))
+
 
         ],
       ),

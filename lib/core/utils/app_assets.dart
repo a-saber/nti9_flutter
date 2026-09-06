@@ -1,0 +1,9 @@
+abstract class AppImages {
+  static final String flag = "assets/images/flag.png";
+
+}
+
+abstract class AppSvgs {
+  static final String logo = "assets/images/logo.svg";
+
+}
