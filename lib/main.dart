@@ -26,8 +26,9 @@ class MyApp extends StatelessWidget {
 }
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
 
+  var controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,8 +48,9 @@ class HomeScreen extends StatelessWidget {
           Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: TextFormField(
+                controller: controller,
                 // enabled: false,
-                readOnly: true,
+                // readOnly: true,
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.grey,
@@ -72,13 +74,53 @@ class HomeScreen extends StatelessWidget {
                 onChanged: (String value){
                   print(value);
                 },
-                onTap: (){
-                  showTimePicker(context: context, initialTime: TimeOfDay.now());
-                },
+                // onTap: (){
+                //   showTimePicker(context: context, initialTime: TimeOfDay.now());
+                // },
                 obscureText: true,
                 obscuringCharacter: '*',
 
-              ))
+              )),
+          SizedBox(height: 30,),
+          Padding(
+            padding: REdgeInsets.symmetric(horizontal: 22.0),
+            child: SizedBox(
+              width: double.infinity,
+              // height: 150,
+              child: ElevatedButton(onPressed: (){
+                print(controller.text);
+              },
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5),
+                    side: BorderSide(
+                      color: Colors.blue,
+                      width: 2
+                    )
+                  ),
+                  backgroundColor: Colors.grey,
+                  foregroundColor: Colors.black,
+                  elevation: 10,
+                  shadowColor: Colors.blue,
+                ), child: Text('Button 1'),
+
+              ),
+            ),
+          ),
+          TextButton(onPressed: (){
+            print('Text Button 01 pressed');
+          },
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.grey,
+                foregroundColor: Colors.black,
+                elevation: 10,
+                shadowColor: Colors.blue,
+              ),
+              child: Text('Text Button 01')),
+          
+          IconButton(onPressed: (){}, icon: Icon(Icons.add_box_rounded)),
+
+          
 
 
         ],
