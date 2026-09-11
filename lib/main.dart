@@ -22,9 +22,49 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           fontFamily: 'Lexend_Deca'
         ),
-        home: HomeScreen()
+        home: TestScreen()
       ),
     );
   }
 }
+
+
+
+class TestScreen extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return TestScreenState();
+  }
+}
+
+class TestScreenState extends State<StatefulWidget>{
+
+  @override
+  Widget build(BuildContext context) {
+    Color containerColor = Colors.red;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Test Screen'),
+      ),
+      body: Column(
+        children: [
+          Container(
+            height: 200,
+            width: 200,
+            color: containerColor,
+          ),
+          SizedBox(height: 20,),
+          ElevatedButton(onPressed: (){
+            setState(() {
+              containerColor = Colors.blue;
+            });
+          }, child: Text('Change Color'))
+        ],
+      ),
+    );
+  }
+
+}
+
 
