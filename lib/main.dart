@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nti9_flutter/core/utils/app_assets.dart';
 
-import 'features/home_screen.dart';
-import 'features/splash_screen.dart';
+import 'features/home/presentation/views/home_screen.dart';
+import 'features/auth/presentation/views/splash_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           fontFamily: 'Lexend_Deca'
         ),
-        home: TestScreen()
+        home: SplashScreen()
       ),
     );
   }
