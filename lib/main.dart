@@ -38,10 +38,10 @@ class TestScreen extends StatefulWidget {
 }
 
 class TestScreenState extends State<StatefulWidget>{
+  Color containerColor = Colors.red;
 
   @override
   Widget build(BuildContext context) {
-    Color containerColor = Colors.red;
 
     return Scaffold(
       appBar: AppBar(
