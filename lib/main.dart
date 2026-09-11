@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nti9_flutter/core/utils/app_assets.dart';
+import 'package:nti9_flutter/core/utils/app_colors.dart';
 
 import 'features/home/presentation/views/home_screen.dart';
 import 'features/auth/presentation/views/splash_screen.dart';
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
       builder: (_ , child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          fontFamily: 'Lexend_Deca'
+          fontFamily: 'Lexend_Deca',
+          scaffoldBackgroundColor: AppColors.background
         ),
         home: SplashScreen()
       ),
