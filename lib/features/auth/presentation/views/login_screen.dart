@@ -108,6 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   CustomBtn(
                     text: 'Login',
                     onPressed: () {
+                      // Navigator.pop(context);
                       Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(builder: (context) => HomeScreen()),
