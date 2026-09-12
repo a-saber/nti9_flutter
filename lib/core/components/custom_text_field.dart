@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../utils/app_assets.dart';
 import '../utils/app_colors.dart';
+import 'custom_svg.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
@@ -38,7 +39,7 @@ class CustomTextField extends StatelessWidget {
       decoration: InputDecoration(
         prefixIcon: Padding(
           padding: REdgeInsets.all(16.0),
-          child: SvgPicture.asset(prefixIconPath),
+          child: CustomSvg(path: prefixIconPath,),
         ),
         suffixIcon: suffixIconPath != null
             ? IconButton(

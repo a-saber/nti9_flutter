@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nti9_flutter/core/helper/my_navigator.dart';
 import 'package:nti9_flutter/core/utils/app_assets.dart';
 import 'package:nti9_flutter/core/utils/app_colors.dart';
 
@@ -18,9 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Future.delayed(Duration(seconds: 3)).then((v){
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(
-          builder: (context)=> LetStartScreen()));
+      MyNavigator.goTo(context, toPage: LetStartScreen(), type: NavigatorType.pushReplacement);
     });
 
     super.initState();

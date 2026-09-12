@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nti9_flutter/core/components/custom_svg.dart';
+import 'package:nti9_flutter/core/helper/my_navigator.dart';
 import 'package:nti9_flutter/core/utils/app_assets.dart';
 import 'package:nti9_flutter/core/utils/app_colors.dart';
 
@@ -21,8 +23,8 @@ class LetStartScreen extends StatelessWidget {
           children: [
             Padding(
               padding: REdgeInsets.symmetric(horizontal: 12.0),
-              child: SvgPicture.asset(
-                AppSvgs.onBoarding,
+              child: CustomSvg(
+                path: AppSvgs.onBoarding,
                 width: double.infinity,
                 height: 342.h,
               ),
@@ -51,10 +53,7 @@ class LetStartScreen extends StatelessWidget {
             CustomBtn(
               text: "Let's Start",
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()),
-                );
+                MyNavigator.goTo(context, toPage: LoginScreen());
               }
             ),
           ],
