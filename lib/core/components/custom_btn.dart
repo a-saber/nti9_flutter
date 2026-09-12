@@ -12,12 +12,7 @@ class CustomBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => LoginScreen()),
-        );
-      },
+      onTap: onPressed,
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(

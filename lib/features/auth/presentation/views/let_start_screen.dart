@@ -5,6 +5,7 @@ import 'package:nti9_flutter/core/utils/app_assets.dart';
 import 'package:nti9_flutter/core/utils/app_colors.dart';
 
 import '../../../../core/components/custom_btn.dart';
+import '../../../../core/utils/app_paddings.dart';
 import 'login_screen.dart';
 
 class LetStartScreen extends StatelessWidget {
@@ -14,7 +15,7 @@ class LetStartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: REdgeInsets.symmetric(horizontal: 22),
+        padding: AppPaddings.defaultPadding,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
