@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nti9_flutter/core/utils/app_assets.dart';
 import 'package:nti9_flutter/core/utils/app_colors.dart';
+import 'package:nti9_flutter/features/home/presentation/views/home_screen.dart';
 
 import '../../../../core/components/custom_btn.dart';
 import '../../../../core/components/custom_text_field.dart';
@@ -58,8 +59,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: passwordController,
                     hint: 'Password',
                     prefixIconPath: AppSvgs.password,
-                    suffixIconPath: isPasswordSecure? AppSvgs.lockOpen: AppSvgs.lockClosed,
-                    onSuffixPressed: (){
+                    suffixIconPath: isPasswordSecure
+                        ? AppSvgs.lockOpen
+                        : AppSvgs.lockClosed,
+                    onSuffixPressed: () {
                       setState(() {
                         isPasswordSecure = !isPasswordSecure;
                       });
@@ -104,7 +107,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(height: 23.h,),
                   CustomBtn(
                     text: 'Login',
-                    onPressed: (){},
+                    onPressed: () {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (context) => HomeScreen()),
+                          (r)=> false
+                      );
+                    },
                   ),
                 ],
               ),
